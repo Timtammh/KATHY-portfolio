@@ -271,3 +271,26 @@ dialog h2 { font-size: 42px; }
   .idea-spark { top: 43px; right: 8px; font-size: 42px; }
   .idea-card .small-tag { margin-top: 13px; font-size: 4px; }
 }
+
+/* 13. Motion：使用 translate，避免覆蓋電話置中及卡片原有角度 */
+@keyframes card-drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* 開場輕浮一次後停止，避免閱讀時持續分心 */
+  .showcase.is-in-view .floating-card { animation: card-drift 5s ease-in-out 1; }
+  .showcase.is-in-view .green-card { animation-delay: .4s; }
+  .showcase.is-in-view .yellow-card { animation-delay: .2s; }
+  .showcase.is-in-view .pink-card { animation-delay: .6s; }
+  .floating-card:hover, .floating-card:focus-within { animation-play-state: paused; }
+  .media-item img { transition: transform 550ms cubic-bezier(.2,.7,.2,1); }
+  .button span { transition: transform 220ms ease; }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .media-item a:hover img { transform: scale(1.035); }
+  .button:hover span { transform: translate(2px, -2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
+}
