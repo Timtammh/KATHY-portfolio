@@ -1,0 +1,273 @@
+/* 01. Design tokens：全站顏色、字體及寬度 */
+:root {
+  --paper: #fff;
+  --ink: #171715;
+  --muted: #70706a;
+  --line: #e6e6df;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, "Helvetica Neue", sans-serif;
+  --page-width: 1280px;
+}
+
+/* 02. Base & shared components */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { color: inherit; cursor: pointer; }
+a, button, label { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid #696cb1; outline-offset: 6px; }
+.page-width { width: min(var(--page-width), calc(100% - 80px)); margin-inline: auto; }
+.eyebrow { font-size: 10px; letter-spacing: 2px; line-height: 1.6; font-weight: 500; }
+.button { min-height: 52px; padding: 16px 25px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; gap: 24px; font-size: 14px; border: 1px solid var(--ink); transition: transform 180ms, background 180ms; }
+.button:hover { transform: translateY(-3px); }
+.button-dark { background: var(--ink); color: white; }
+.button-dark:hover { background: #353530; }
+.button-outline { background: white; }
+h2 { margin: 12px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 4vw, 58px); line-height: 1.1; letter-spacing: -2px; }
+h2 em { font-weight: 400; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* 03. Navigation */
+.site-header { min-height: 98px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; font-size: 16px; letter-spacing: -.6px; }
+.brand-symbol { font-size: 53px; line-height: 1; }
+.site-header nav { display: flex; gap: 38px; font-size: 13px; }
+.site-header nav a:hover { color: var(--muted); }
+.header-cta { min-height: 44px; padding: 12px 22px; font-size: 13px; }
+
+/* 04. Hero */
+.hero { overflow: hidden; }
+.hero-copy { padding-top: 62px; text-align: center; position: relative; z-index: 2; }
+.hero-copy .eyebrow { color: var(--muted); margin: 0 0 22px; }
+h1 { font-family: var(--serif); font-size: clamp(64px, 7.7vw, 108px); font-weight: 400; letter-spacing: -5px; line-height: 1.02; margin: 0; }
+h1 em { font-weight: 400; }
+.hero-description { font-size: 17px; line-height: 1.7; color: #575751; margin: 24px 0 30px; }
+.hero-buttons { display: flex; justify-content: center; gap: 14px; }
+
+/* 05. Floating showcase：以中央手機為主，四周放概念卡 */
+.showcase { max-width: 1200px; height: 565px; margin: 24px auto 0; position: relative; }
+.showcase-glow { position: absolute; width: 760px; height: 500px; left: 50%; bottom: -145px; transform: translateX(-50%); border-radius: 50%; background: linear-gradient(180deg, #f8f3ef 10%, #f9f4c5 85%); }
+.orbit { position: absolute; left: 50%; border: 1px solid #e4e7df; border-radius: 50%; transform: translateX(-50%); pointer-events: none; }
+.orbit-one { width: 880px; height: 880px; top: 130px; }
+.orbit-two { width: 1040px; height: 1040px; top: 97px; }
+.floating-card { position: absolute; z-index: 2; transition: transform 250ms; }
+a.floating-card:hover { transform: translateY(-7px) rotate(-2deg); }
+.mini-label { font-size: 8px; letter-spacing: 1.1px; }
+.blue-card { width: 170px; height: 206px; top: 4px; left: 13%; border-radius: 20px; padding: 18px; background: linear-gradient(145deg, #d2e7f1, #a8c6d9); overflow: hidden; box-shadow: inset 0 0 30px #ffffff40; }
+.blue-card::after { content: ''; position: absolute; width: 250px; height: 16px; background: #ffffff70; transform: rotate(-28deg); top: 43px; left: -48px; filter: blur(5px); }
+.bottle { width: 66px; height: 105px; background: linear-gradient(90deg,#7e9faf,#c3dce8 45%,#94b6c7); border-radius: 8px 8px 15px 15px; position: absolute; left: 60px; top: 69px; transform: rotate(17deg); box-shadow: 12px 12px 15px #486f8830; display: grid; place-items: center; }
+.bottle::before { content: ''; position: absolute; top: -18px; width: 34px; height: 20px; border-radius: 4px 4px 0 0; background: repeating-linear-gradient(90deg,#cfdae1 0 2px,#9eb7c5 3px 4px); }
+.bottle span { font-family: var(--serif); font-size: 25px; color: #fff; text-align: center; }
+.bottle small { display: block; font: 5px var(--sans); letter-spacing: 1px; margin-top: 10px; }
+.card-caption { position: absolute; bottom: 13px; left: 17px; font-size: 9px; }
+.lilac-pill { left: 21%; top: 241px; background: #eccbfa; border-radius: 50px; padding: 11px 17px; font-size: 12px; transform: rotate(-6deg); }
+.yellow-card { top: 337px; left: 2%; width: 235px; padding: 23px; border-radius: 20px; background: #ffe27b; display: flex; align-items: center; gap: 17px; }
+.asterisk { font-size: 65px; line-height: 1; }
+.yellow-card small { display: block; font-size: 8px; letter-spacing: 1px; margin-bottom: 9px; }
+.yellow-card span:last-child { font-size: 18px; line-height: 1.2; }
+.green-card { top: 15px; right: 9%; width: 245px; height: 165px; padding: 21px; border-radius: 23px; background: #b9efba; overflow: hidden; }
+.green-card strong { display: block; font-size: 32px; font-weight: 400; line-height: 1; margin-top: 14px; letter-spacing: -1px; }
+.green-card em { font-family: var(--serif); }
+.green-flower { position: absolute; font-size: 104px; color: #346741; right: 14px; top: 33px; transform: rotate(15deg); }
+.small-tag { display: inline-block; margin-top: 12px; font-size: 6px; letter-spacing: .7px; padding: 5px 8px; border-radius: 20px; background: white; }
+.pink-card { right: 2%; top: 251px; width: 199px; padding: 10px; background: white; border: 1px solid var(--line); border-radius: 19px; box-shadow: 0 15px 25px #00000008; transform: rotate(5deg); }
+.pink-art { background: #f1b7bd; border-radius: 12px; padding: 16px; position: relative; overflow: hidden; }
+.pink-art > span { font-size: 38px; font-weight: 700; line-height: .92; letter-spacing: -2px; }
+.pink-art em { font-family: var(--serif); font-weight: 400; }
+.pink-art b { position: absolute; font-size: 99px; right: -7px; bottom: 8px; color: #c24459; }
+.pink-caption { display: flex; justify-content: space-between; align-items: center; font-size: 9px; padding: 10px 3px 2px; }
+.pink-caption span:last-child { font-size: 24px; color: #b23e54; }
+.phone { position: absolute; z-index: 3; width: 280px; height: 488px; left: 50%; top: 57px; transform: translateX(-50%); padding: 11px; border: 3px solid #353532; border-radius: 52px; background: #1c1c1c; box-shadow: 0 20px 35px #28281b18, inset 0 0 0 2px #090909; }
+.phone-screen { height: 100%; border-radius: 38px; overflow: hidden; position: relative; background: #657c4c; }
+.phone video { width: 100%; height: 100%; display: block; object-fit: cover; }
+.phone-top { position: absolute; top: 20px; left: 16px; right: 16px; z-index: 2; display: flex; align-items: center; gap: 8px; color: white; font-size: 10px; pointer-events: none; text-shadow: 0 1px 5px #0007; }
+.avatar { border: 1px solid white; border-radius: 50%; width: 31px; height: 31px; display: grid; place-items: center; background: #ecdcd3; color: #28251d; font-family: var(--serif); font-size: 17px; text-shadow: none; }
+.phone-top small { display: block; font-size: 8px; margin-top: 4px; opacity: .8; }
+.reel-badge { margin-left: auto; padding: 6px 8px; background: #f27361; border-radius: 20px; font-size: 8px; text-shadow: none; }
+.phone-title { position: absolute; left: 21px; bottom: 78px; font-family: var(--serif); font-size: 35px; letter-spacing: -1px; color: white; line-height: 1.08; text-shadow: 0 2px 20px #000a; pointer-events: none; }
+.showcase-note { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); z-index: 4; font-size: 8px; letter-spacing: 1.3px; white-space: nowrap; }
+.reel-tools { position: relative; z-index: 4; background: white; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 18px; align-items: center; padding: 23px 0 30px; color: var(--muted); font-size: 10px; }
+.reel-tools p { margin: 0; }
+.file-label { cursor: pointer; color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.file-label:has(+ input:focus-visible) { outline: 2px solid #696cb1; outline-offset: 4px; }
+.local-note { font-size: 9px; }
+
+/* 06. Selected work */
+.work-section { padding-block: 85px 90px; }
+.section-heading { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 38px; }
+.section-heading > p { font-size: 13px; line-height: 1.8; color: var(--muted); margin-bottom: 4px; }
+.work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.work-card { border: 0; background: transparent; padding: 0; text-align: left; }
+.work-art { display: block; aspect-ratio: 4 / 4.5; border-radius: 15px; padding: 25px; position: relative; overflow: hidden; transition: transform 250ms; }
+.work-card:hover .work-art { transform: translateY(-6px); }
+.poster-kicker, .poster-bottom { position: absolute; font-size: 7px; letter-spacing: 1.5px; z-index: 2; }
+.poster-bottom { bottom: 23px; left: 25px; }
+.still-art { background: #dfe9eb; color: #37504b; }
+.still-title { display: block; font: 110px var(--serif); letter-spacing: -8px; position: relative; z-index: 2; margin-top: 38px; }
+.still-circle { position: absolute; border-radius: 50% 50% 0 0; background: linear-gradient(135deg, #b1c9c0,#7e9c94); width: 63%; height: 65%; bottom: -10%; right: -5%; box-shadow: -15px 12px 30px #47675c20; transform: rotate(-20deg); }
+.form-art { background: #ece7df; }
+.form-title { display: block; font-size: clamp(30px,4vw,60px); letter-spacing: -3px; line-height: .94; margin-top: 48px; position: relative; z-index: 2; }
+.form-title i { font-family: var(--serif); font-weight: 400; }
+.form-orb { position: absolute; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #ffc2a8,#c76542 55%,#76351d); bottom: -15px; right: -14px; box-shadow: -17px 22px 30px #a2776030; }
+.move-art { background: #dcd3f2; color: #373143; }
+.move-title { display: block; font-size: clamp(40px,5vw,76px); line-height: .95; letter-spacing: -4px; margin-top: 43px; position: relative; z-index: 2; }
+.move-title i { font-family: var(--serif); }
+.move-star { position: absolute; bottom: -62px; right: -25px; font-size: 246px; color: #9984c3; line-height: 1; }
+.work-caption { display: flex; justify-content: space-between; gap: 10px; padding-top: 20px; }
+.work-caption strong { display: block; font-size: 14px; font-weight: 500; }
+.work-caption small { display: block; color: var(--muted); font-size: 10px; margin-top: 8px; }
+
+/* 07. About, contact & footer */
+.about-section { border-top: 1px solid var(--line); padding-block: 75px 90px; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
+.about-copy { padding-top: 22px; }
+.about-copy > p { font-size: 17px; line-height: 1.8; color: #61615b; margin: 0 0 25px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 9px; }
+.skill-tags span { border: 1px solid var(--line); padding: 9px 14px; border-radius: 30px; font-size: 11px; }
+.contact-section { background: #f5f3ec; padding-block: 72px; text-align: center; }
+.contact-section h2 { font-size: clamp(48px,6vw,80px); }
+.contact-section h2 > span { font-family: var(--sans); }
+.contact-link { margin-top: 28px; }
+.site-footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 29px; font-size: 10px; }
+.site-footer > span { color: var(--muted); }
+
+/* 08. Project dialog */
+dialog { width: min(580px, calc(100% - 40px)); border: 1px solid var(--line); border-radius: 24px; padding: 45px; color: var(--ink); }
+dialog::backdrop { background: #181b185c; backdrop-filter: blur(5px); }
+.dialog-close { position: absolute; right: 16px; top: 12px; border: none; background: none; font-size: 30px; }
+dialog h2 { font-size: 42px; }
+#project-description { line-height: 1.8; color: #61615b; }
+.dialog-note { font-size: 11px; color: var(--muted); margin-top: 25px; }
+
+/* 09. Tablet & mobile */
+@media (max-width: 1000px) {
+  .blue-card { left: 5%; }
+  .green-card { right: 3%; width: 205px; }
+  .green-flower { font-size: 77px; right: 7px; top: 57px; }
+  .yellow-card { left: 0; width: 200px; padding: 18px; }
+  .yellow-card .asterisk { font-size: 48px; }
+  .yellow-card span:last-child { font-size: 16px; }
+  .pink-card { right: 0; width: 175px; }
+  .lilac-pill { left: 8%; }
+  .about-section { gap: 45px; }
+}
+@media (max-width: 700px) {
+  .page-width { width: calc(100% - 40px); }
+  .site-header { min-height: 82px; gap: 12px; flex-wrap: wrap; padding-block: 15px; }
+  .brand { font-size: 13px; gap: 7px; }
+  .brand-symbol { font-size: 37px; }
+  .header-cta { padding: 10px 14px; min-height: 38px; font-size: 11px; gap: 10px; }
+  .site-header nav { order: 3; width: 100%; justify-content: center; gap: 25px; font-size: 11px; padding-top: 8px; }
+  .hero-copy { padding-top: 38px; }
+  h1 { letter-spacing: -3px; font-size: clamp(62px, 13vw, 90px); }
+  .hero-description { font-size: 14px; margin-block: 20px 25px; }
+  .hero-copy .eyebrow { font-size: 8px; }
+  .hero-buttons { gap: 10px; }
+  .button { padding: 14px 17px; font-size: 12px; gap: 12px; min-height: 46px; }
+  .showcase { height: 560px; margin-top: 32px; }
+  .phone { top: 92px; width: 225px; height: 410px; border-radius: 42px; padding: 8px; }
+  .phone-screen { border-radius: 31px; }
+  .phone-title { font-size: 29px; left: 15px; }
+  .phone-top { left: 10px; right: 10px; font-size: 9px; }
+  .reel-badge { font-size: 7px; }
+  .blue-card { top: 0; left: 5%; width: 115px; height: 133px; border-radius: 15px; padding: 11px; z-index: 4; transform: rotate(-8deg); }
+  .mini-label { font-size: 6px; letter-spacing: .6px; }
+  .bottle { width: 41px; height: 66px; left: 42px; top: 47px; }
+  .bottle::before { width: 23px; height: 12px; top: -12px; }
+  .bottle span { font-size: 17px; }
+  .bottle small { font-size: 3px; margin-top: 5px; }
+  .card-caption { font-size: 6px; left: 10px; bottom: 8px; }
+  .green-card { top: 16px; right: 4%; width: 143px; height: 109px; padding: 13px; border-radius: 15px; }
+  .green-card strong { font-size: 23px; margin-top: 9px; }
+  .green-flower { font-size: 54px; top: 29px; right: 6px; }
+  .small-tag { font-size: 4px; padding: 4px 6px; margin-top: 7px; }
+  .lilac-pill { display: none; }
+  .yellow-card { z-index: 4; top: 417px; left: 3%; width: 145px; padding: 13px; gap: 10px; border-radius: 14px; transform: rotate(-6deg); }
+  .yellow-card .asterisk { font-size: 36px; }
+  .yellow-card small { font-size: 5px; margin-bottom: 6px; }
+  .yellow-card span:last-child { font-size: 12px; }
+  .pink-card { z-index: 4; width: 114px; right: 3%; top: 368px; padding: 6px; border-radius: 12px; }
+  .pink-art { padding: 10px; border-radius: 8px; }
+  .pink-art > span { font-size: 25px; letter-spacing: -1px; }
+  .pink-art b { font-size: 59px; }
+  .pink-caption { font-size: 5px; padding-top: 4px; }
+  .pink-caption span:last-child { font-size: 17px; }
+  .showcase-glow { width: 460px; height: 420px; bottom: -80px; }
+  .orbit-one { width: 510px; height: 650px; top: 110px; }
+  .orbit-two { width: 600px; height: 750px; top: 85px; }
+  .reel-tools { padding-top: 12px; text-align: center; }
+  .reel-tools p { flex-basis: 100%; }
+  .work-section { padding-block: 45px 55px; }
+  .section-heading { display: block; margin-bottom: 28px; }
+  .section-heading > p { margin-top: 18px; font-size: 12px; }
+  .work-grid { grid-template-columns: 1fr; gap: 30px; }
+  .work-art { aspect-ratio: 1.15; }
+  .still-title { font-size: 108px; margin-top: 25px; }
+  .form-title { font-size: 65px; margin-top: 40px; }
+  .move-title { font-size: 74px; margin-top: 35px; }
+  .about-section { grid-template-columns: 1fr; gap: 20px; padding-block: 45px; }
+  .about-copy { padding: 0; }
+  .about-copy > p { font-size: 15px; }
+  .contact-section { padding-block: 50px; }
+  .contact-section .eyebrow { font-size: 8px; }
+  .site-footer { flex-wrap: wrap; font-size: 9px; gap: 18px; }
+  .site-footer > span { order: 3; width: 100%; }
+  dialog { padding: 35px 25px; }
+}
+
+/* 尊重減少動態效果的系統設定 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* 10. 單行主標題及瀑布流作品牆 */
+.hero-copy h1 {
+  font-size: clamp(26px, 7.4vw, 104px);
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+.gallery-section { padding-block: 25px 85px; }
+.media-grid { columns: 4; column-gap: 16px; }
+.media-item { margin: 0 0 16px; break-inside: avoid; border-radius: 12px; overflow: hidden; background: #f1f1ed; }
+.media-item img, .media-item video { display: block; width: 100%; height: auto; }
+.media-item a { display: block; }
+.media-item a:focus-visible { outline-offset: -4px; }
+@media (max-width: 1000px) {
+  .media-grid { columns: 3; }
+}
+@media (max-width: 700px) {
+  .media-grid { columns: 2; column-gap: 10px; }
+  .media-item { margin-bottom: 10px; border-radius: 8px; }
+  .gallery-section { padding-block: 10px 45px; }
+}
+
+/* 11. Gallery 精選卡：圖片沿用 assets，保持完整畫面 */
+.featured-art { padding: 0; display: flex; align-items: center; justify-content: center; }
+.featured-art img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.beauty-preview { background: #fbe8e4; }
+.portrait-preview { background: #ded7c7; }
+.motion-preview { background: #fff8f5; border: 1px solid var(--line); }
+.featured-badge { position: absolute; right: 16px; bottom: 16px; padding: 8px 12px; background: white; border: 1px solid var(--line); border-radius: 30px; font-size: 9px; letter-spacing: 1px; }
+.work-summary { display: block; margin-top: 12px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.dialog-gallery-link { display: inline-block; margin-top: 15px; text-decoration: underline; text-underline-offset: 5px; font-size: 13px; }
+
+/* 12. Hero 左側創意文字卡 */
+.idea-card { width: 206px; height: 206px; top: 4px; left: 10%; padding: 22px; border-radius: 22px; overflow: hidden; background: #cde5ee; color: #203e4a; }
+.idea-card strong { display: block; margin-top: 23px; font-size: 43px; font-weight: 400; line-height: .95; letter-spacing: -1.5px; }
+.idea-card em { font-family: var(--serif); }
+.idea-spark { position: absolute; right: 16px; top: 66px; font-size: 75px; line-height: 1; color: #41788b; }
+.idea-card .small-tag { margin-top: 21px; }
+@media (max-width: 1000px) {
+  .idea-card { left: 4%; width: 175px; padding: 18px; }
+  .idea-card strong { font-size: 39px; }
+  .idea-spark { right: 9px; font-size: 62px; }
+}
+@media (max-width: 700px) {
+  .idea-card { top: 0; left: 5%; width: 120px; height: 133px; padding: 12px; border-radius: 15px; z-index: 4; transform: rotate(-8deg); }
+  .idea-card .mini-label { font-size: 5px; letter-spacing: .3px; }
+  .idea-card strong { margin-top: 13px; font-size: 28px; letter-spacing: -.8px; }
+  .idea-spark { top: 43px; right: 8px; font-size: 42px; }
+  .idea-card .small-tag { margin-top: 13px; font-size: 4px; }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kathy Cheung — a portfolio of visual design and moving images.">
+  <title>KATHY CHEUNG — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- 01. Navigation：修改名字及選單 -->
+  <header class="site-header page-width">
+    <a class="brand" href="#home"><span class="brand-symbol" aria-hidden="true">✳</span><span>/ KATHY CHEUNG</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <a class="button button-dark header-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <!-- 02. Hero：主標題及介紹 -->
+    <section id="home" class="hero" aria-labelledby="page-title">
+      <div class="hero-copy page-width">
+        <p class="eyebrow">VISUAL DESIGN & MOVING IMAGES</p>
+        <h1 id="page-title">This is my <em>portfolio.</em></h1>
+        <p class="hero-description">Ideas with personality. Visuals with purpose.<br>A little curiosity in everything I create.</p>
+        <div class="hero-buttons">
+          <a class="button button-dark" href="#gallery">Explore my work <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <!-- 03. Showcase：CSS 製作的概念作品，正式作品可換成 <img> -->
+      <div class="showcase" id="reel">
+        <div class="orbit orbit-one" aria-hidden="true"></div>
+        <div class="orbit orbit-two" aria-hidden="true"></div>
+        <div class="showcase-glow" aria-hidden="true"></div>
+
+        <!-- 左側創意文字卡：與右側 Fresh thinking 呼應 -->
+        <div class="floating-card idea-card">
+          <span class="mini-label">A DIFFERENT POINT OF VIEW</span>
+          <strong>Bold<br><em>ideas.</em></strong>
+          <span class="idea-spark" aria-hidden="true">↗</span>
+          <span class="small-tag">IMAGINATION + DESIGN</span>
+        </div>
+        <a class="floating-card yellow-card" href="#gallery">
+          <span class="asterisk" aria-hidden="true">✳</span>
+          <span><small>THE APPROACH</small>Made to<br>mean something.</span>
+        </a>
+        <a class="floating-card green-card" href="#gallery" aria-label="Explore editorial design concepts">
+          <span class="mini-label">GOOD IDEAS GROW HERE</span>
+          <strong>Fresh<br><em>thinking.</em></strong>
+          <span class="green-flower" aria-hidden="true">✽</span>
+          <span class="small-tag">DESIGN + CURIOSITY</span>
+        </a>
+        <a class="floating-card pink-card" href="#gallery" aria-label="Explore motion concepts">
+          <div class="pink-art"><span>Make<br>some<br><em>move.</em></span><b aria-hidden="true">↗</b></div>
+          <div class="pink-caption"><span>Motion, with emotion.</span><span aria-hidden="true">♡</span></div>
+        </a>
+
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-top"><span class="avatar">K.</span><span>Kathy Cheung<small>In motion</small></span><span class="reel-badge">● REEL</span></div>
+            <!-- 換影片：把 src 改為 assets/showreel.mp4；可加入 poster 封面 -->
+            <video id="main-video" poster="assets/web/portfolio-10-poster.jpg" controls playsinline loop muted preload="metadata" aria-label="Portfolio reel">
+              <source src="assets/Model_showcase%20video%20.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+            <div class="phone-title" aria-hidden="true">Find beauty<br>in the <em>ordinary.</em></div>
+          </div>
+        </div>
+        <span class="showcase-note">A PLAYGROUND OF IDEAS · CONCEPT PREVIEWS</span>
+      </div>
+      <div class="reel-tools page-width">
+        <p id="video-status" role="status" aria-live="polite">Kathy Cheung · Video showcase.</p>
+        <label class="file-label" for="video-file">Preview your video ↗</label>
+        <input class="visually-hidden" id="video-file" type="file" accept="video/*">
+        <span class="local-note">Local preview only. No upload.</span>
+      </div>
+    </section>
+
+    <!-- 05. Gallery：所有素材來自 assets；每個 figure 是一個作品 -->
+    <section id="gallery" class="gallery-section page-width" aria-label="Images and films">
+      <div class="media-grid">
+        <figure class="media-item">
+          <a href="assets/web/portfolio-06.jpg" target="_blank" rel="noopener" aria-label="Open image 1 at full size"><img src="assets/web/portfolio-06.jpg" alt="Portfolio image 1" width="6903" height="12270" loading="lazy" decoding="async"></a>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-01-poster.jpg" width="1080" height="1920" aria-label="Portfolio film 2"><source src="assets/web/portfolio-01.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <a href="assets/web/portfolio-07.jpg" target="_blank" rel="noopener" aria-label="Open image 3 at full size"><img src="assets/web/portfolio-07.jpg" alt="Portfolio image 3" width="2048" height="2048" loading="lazy" decoding="async"></a>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-02-poster.jpg" width="1080" height="1920" aria-label="Portfolio film 4"><source src="assets/web/portfolio-02.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <a href="assets/web/portfolio-12.jpg" target="_blank" rel="noopener" aria-label="Open image 5 at full size"><img src="assets/web/portfolio-12.jpg" alt="Portfolio image 5" width="1200" height="1238" loading="lazy" decoding="async"></a>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-08-poster.jpg" width="960" height="960" aria-label="Portfolio film 12"><source src="assets/Khai%20tong2.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <a href="assets/web/portfolio-13.jpg" target="_blank" rel="noopener" aria-label="Open image 7 at full size"><img src="assets/web/portfolio-13.jpg" alt="Portfolio image 7" width="2048" height="1152" loading="lazy" decoding="async"></a>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-04-poster.jpg" width="1080" height="1920" aria-label="Portfolio film 8"><source src="assets/web/portfolio-04.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <a href="assets/web/portfolio-14.jpg" target="_blank" rel="noopener" aria-label="Open image 9 at full size"><img src="assets/web/portfolio-14.jpg" alt="Portfolio image 9" width="1152" height="2048" loading="lazy" decoding="async"></a>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-05-poster.jpg" width="1080" height="1920" aria-label="Portfolio film 10"><source src="assets/web/portfolio-05.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <a href="assets/web/portfolio-15.jpg" target="_blank" rel="noopener" aria-label="Open image 11 at full size"><img src="assets/web/portfolio-15.jpg" alt="Portfolio image 11" width="2414" height="1560" loading="lazy" decoding="async"></a>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-03-poster.jpg" width="720" height="1278" aria-label="Portfolio film 6"><source src="assets/7%20precious%20botanical%20oils%2C%2099%25%20natural%20origin%20in%20Phyto%207%20Elixir.Camellia%20for%20shine%2C%20Jojoba%20and%20H.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-09-poster.jpg" width="720" height="1280" aria-label="Portfolio film 13"><source src="assets/Micro-capillaries_ignite_with_pu%E2%80%A6_20260928101242.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-10-poster.jpg" width="1280" height="720" aria-label="Portfolio film 14"><source src="assets/Model_showcase%20video%20.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-11-poster.jpg" width="1280" height="720" aria-label="Portfolio film 15"><source src="assets/magnific_keep-the-subject-and-came_yiDBxMlPW9.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-17-poster.jpg" width="720" height="1280" aria-label="Portfolio film 16"><source src="assets/%E2%9C%A8%20Something%20beautiful%20is%20coming%20%E2%9C%A8Two%20new%20elixirs%20inspired%20by%207%20precious%20botanical%20oils%20are%20comin.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+        <figure class="media-item">
+          <video controls playsinline preload="none" poster="assets/web/portfolio-18-poster.jpg" width="720" height="1280" aria-label="Portfolio film 17"><source src="assets/%E3%80%90%F0%9F%92%891%20SHOT%20%E6%B3%A8%E5%85%A5%E9%86%AB%E7%BE%8E%E7%B4%9A%E6%B0%B4%E5%85%89%E2%9C%A8%E3%80%91_%E5%94%94%E4%B8%80%E5%AE%9A%E5%81%9A%E9%86%AB%E7%BE%8E%E9%83%BD%E5%8F%AF%E4%BB%A5%E6%93%81%E6%9C%89%20--%E5%8D%B3%E6%99%82%E8%A6%8B%E6%95%88--%20%E5%98%85%E3%80%8C%E6%B0%B4%E5%85%89%E8%82%8C%E3%80%8D%EF%BC%81_%23PDRN%E8%86%A0%E5%8E%9F%E8%9B%8B%E7%99%BD%E5%BE%AE%E9%87%9D%E7%B7%8A%E7%B7%BB%E6%B0%B4%E5%85%89%E4%BA%8C%E9%87%8D%E5%A5%8F%EF%BC%8C%E6%B3%A8%E5%85%A5%E5%A4%9A%E9%87%8D%E9%86%AB%E7%BE%8E%E7%B4%9A%E4%BF%AE%E5%BE%A9%E6%88%90%E5%88%86%EF%BC%8C%E5%8C%85%E6%8B%AC%E9%AB%98%E6%BF%83%E5%BA%A6%20PDRN%E3%80%814%E9%87%8D%E8%86%A0%E5%8E%9F%E8%9B%8B.mp4" type="video/mp4">Your browser does not support video.</video>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 06. Contact：修改 mailto 及顯示的 email -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="page-width"><p class="eyebrow">THE NEXT GOOD IDEA STARTS WITH A HELLO</p><h2 id="contact-title">Let’s make<br><em>something great.</em> <span aria-hidden="true">↗</span></h2><a class="button button-dark contact-link" href="mailto:kittycst1218@gmail.com">kittycst1218@gmail.com <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><a href="#home">KATHY CHEUNG</a><span>© <span id="current-year">2026</span> · A little curiosity goes a long way.</span><a href="#home">Back to top ↑</a></footer>
+
+</body>
+</html>
