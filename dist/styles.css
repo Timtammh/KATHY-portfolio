@@ -32,7 +32,6 @@ h2 em { font-weight: 400; }
 /* 03. Navigation */
 .site-header { min-height: 98px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; font-size: 16px; letter-spacing: -.6px; }
-.brand-symbol { font-size: 53px; line-height: 1; }
 .site-header nav { display: flex; gap: 38px; font-size: 13px; }
 .site-header nav a:hover { color: var(--muted); }
 .header-cta { min-height: 44px; padding: 12px 22px; font-size: 13px; }
@@ -156,7 +155,6 @@ dialog h2 { font-size: 42px; }
   .page-width { width: calc(100% - 40px); }
   .site-header { min-height: 82px; gap: 12px; flex-wrap: wrap; padding-block: 15px; }
   .brand { font-size: 13px; gap: 7px; }
-  .brand-symbol { font-size: 37px; }
   .header-cta { padding: 10px 14px; min-height: 38px; font-size: 11px; gap: 10px; }
   .site-header nav { order: 3; width: 100%; justify-content: center; gap: 25px; font-size: 11px; padding-top: 8px; }
   .hero-copy { padding-top: 38px; }
@@ -228,7 +226,7 @@ dialog h2 { font-size: 42px; }
   letter-spacing: -0.045em;
   white-space: nowrap;
 }
-.gallery-section { padding-block: 25px 85px; }
+.gallery-section { padding-block: 65px 85px; }
 .media-grid { columns: 4; column-gap: 16px; }
 .media-item { margin: 0 0 16px; break-inside: avoid; border-radius: 12px; overflow: hidden; background: #f1f1ed; }
 .media-item img, .media-item video { display: block; width: 100%; height: auto; }
@@ -240,7 +238,7 @@ dialog h2 { font-size: 42px; }
 @media (max-width: 700px) {
   .media-grid { columns: 2; column-gap: 10px; }
   .media-item { margin-bottom: 10px; border-radius: 8px; }
-  .gallery-section { padding-block: 10px 45px; }
+  .gallery-section { padding-block: 40px 45px; }
 }
 
 /* 11. Gallery 精選卡：圖片沿用 assets，保持完整畫面 */
